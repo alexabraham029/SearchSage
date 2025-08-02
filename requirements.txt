@@ -4,3 +4,5 @@ langchain-community
 streamlit
 python-dotenv
 serpapi
+arxiv
+
