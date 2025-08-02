@@ -6,5 +6,7 @@ python-dotenv
 serpapi
 arxiv
 wikipedia
+google-search-results
+
 
 
