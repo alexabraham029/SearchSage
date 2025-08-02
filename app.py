@@ -90,7 +90,7 @@ if user_query := st.chat_input(placeholder="Ask a question..."):
             ("user", "Conversation history:\n" + history_block + "\n\nLatest question:\n" + user_query + "\n\nStandalone version:")
         ])
 
-        reformulator_llm = ChatGroq(groq_api_key=groq_api_key, model_name="gemma2-9b-it", streaming=False)
+        reformulator_llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama3-8b-8192", streaming=False)
         reformulation_chain = LLMChain(llm=reformulator_llm, prompt=reformulate_prompt)
         try:
             standalone_question = reformulation_chain.run()
@@ -124,5 +124,6 @@ if user_query := st.chat_input(placeholder="Ask a question..."):
             # Append assistant message
             st.session_state["chat_history"].append({"role": "assistant", "content": response})
             st.write(response)
+
 
 
